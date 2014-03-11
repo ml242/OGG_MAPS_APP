@@ -74,6 +74,9 @@ App.makeMap = function() {
 
   App.search = function(input) {
 
+  //  #TODO NEED TO CLEAR UP MARKER VARIABLE NAME TO CLEAN UP WORKSPACE
+
+
     var infoTemplate = Handlebars.compile($("#template-window").html());
 
     var markers = [];
@@ -89,12 +92,13 @@ App.makeMap = function() {
     // pick list. Retrieve the matching places for that item.
     google.maps.event.addListener(searchBox, 'places_changed', function() {
       var places = searchBox.getPlaces();
-      for (var i = 0, marker; marker = markers[i]; i++){
+      for (var i = 0, marker; i < markers.length; i++){
+        marker = markers[i];
         marker.setMap(null);
     }
 
     // For each place, get the icon, place name, and location.
-    markers = [];
+    // markers = [];
     var bounds = new google.maps.LatLngBounds();
     for (var i = 0, place; place = places[i]; i++) {
       var image = {
@@ -104,7 +108,8 @@ App.makeMap = function() {
         anchor: new google.maps.Point(17, 34),
         scaledSize: new google.maps.Size(25, 25)
       };
-      console.log("setting up infowindow " + i);
+
+      // console.log("setting up infowindow " + i);
       var infoWindow = new google.maps.InfoWindow({
         content: infoTemplate({i:i, name: place.name, address: place.formatted_address}),
         maxWidth: 400,
