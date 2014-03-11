@@ -5,9 +5,15 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0-alpha.1/handlebars.js"></script>
+  <script id="template-window" type="text/x-handlebars-template">
+    <h1>{{name}}</h1>
+    {{address}}<br>
+    <input class="controls" id="pac-input-{{i}}" placeholder="Search Nearby" type="text"></input>
+  </script>
 </head>
 <style>
-      
+
 
       html, body, #map-canvas {
         margin: 0;
@@ -72,5 +78,6 @@
 <script type="text/javascript"
          src="https://maps.googleapis.com/maps/api/js?v=3&sensor=true&libraries=places">
 </script>
+<script src="https://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
 </body>
 </html>
