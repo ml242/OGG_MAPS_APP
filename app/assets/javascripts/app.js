@@ -104,6 +104,7 @@ App.makeMap = function() {
 
     var bounds = new google.maps.LatLngBounds();
     for (var i = 0, place; place = places[i]; i++) {
+    // for (var i = 0, i < places.length ; i++) {
       var image = {
         url: place.icon,
         size: new google.maps.Size(71, 71),
