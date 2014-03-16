@@ -136,7 +136,7 @@ App.makeMap = function() {
       });
 
       console.log(markers);
-      console.log(places);
+      // console.log(places);
       markers.push(marker);
 
 
