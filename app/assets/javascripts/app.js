@@ -135,8 +135,8 @@ App.makeMap = function() {
         // bias to nearby results
       });
 
-      // console.log(markers);
-      // console.log(places);
+      console.log(markers);
+      console.log(places);
       markers.push(marker);
 
 
